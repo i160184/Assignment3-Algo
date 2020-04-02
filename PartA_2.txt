@@ -1,0 +1,23 @@
+
+
+void SearchEng(string txt,string pat){
+	int PatSize = pat.size();
+    	int TextSize = txt.size();
+    	int count = PatSize;
+	while (count <= TextSize){
+		int j;
+		for (j = 0; j < PatSize; j++){
+			if (txt[count - j] != pat[PatSize - j]){
+				break;
+			}
+		}
+
+		if (j == PatSize){
+			cout << "Pattern at index  found" << count - j;
+			count = count + PatSize;
+		}
+		else{
+			count = count + 1;
+		}
+	}
+}
